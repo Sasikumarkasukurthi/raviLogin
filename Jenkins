@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('clone') {
+       /* stage('clone') {
             steps {
                 git branch: 'DEV', url: 'https://github.com/Sasikumarkasukurthi/raviLogin.git'
                 }
-        }
+        } */
         stage('build'){
             steps{
                 sh 'mvn package'
