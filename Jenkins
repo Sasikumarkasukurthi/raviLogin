@@ -1,20 +1,15 @@
 pipeline {
     agent any
-    stages{
-        stage('clone code') {
-            steps{
-            git branch: 'main', url: 'https://github.com/Sasikumarkasukurthi/Dockerproject.git'
-            }
+    stages {
+        stage('clone') {
+            steps {
+                git branch: 'DEV', url: 'https://github.com/Sasikumarkasukurthi/raviLogin.git'
+                }
         }
         stage('build'){
             steps{
-            sh 'docker build -t koti .'
+                sh 'mvn package'
             }
         }
-    stage('runner') {
-        steps {
-           sh 'docker run --name kotiq -d -p98:80 koti:latest'
-        }
-    }
     }
 }
