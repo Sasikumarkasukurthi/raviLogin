@@ -13,7 +13,7 @@ pipeline {
         }
         stage('runapp'){
             steps{
-                sh 'docker run --name sasiapp -d -p98:80 tomcat:latest'
+                sh 'docker run --name sasiappV1.2 -d -p98:80 tomcat:latest'
             }
         }
     }
